@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Modal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            min-height: 100vh;
+        }
+
+        /* Background page */
+        .background {
+            height: 100vh;
+            padding: 30px;
+        }
+
+        .background h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .background p {
+            color: #666;
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.65);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Login modal */
+        .login-modal {
+            width: 475px;
+            min-height: 590px;
+
+            background-color: white;
+            border-radius: 8px;
+
+            padding: 22px 52px 25px;
+
+            position: relative;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Header */
+        .modal-header {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+
+            border: none;
+            background: none;
+
+            font-size: 32px;
+            font-weight: 300;
+
+            color: #333;
+            cursor: pointer;
+
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Login buttons */
+        .login-btn {
+            width: 100%;
+            height: 50px;
+
+            background-color: white;
+            border: 1px solid #bdbdbd;
+            border-radius: 4px;
+
+            margin-bottom: 26px;
+
+            display: flex;
+            align-items: center;
+
+            cursor: pointer;
+
+            font-size: 16px;
+            color: #333;
+        }
+
+        .login-btn:hover {
+            background-color: #f8f8f8;
+        }
+
+        .icon {
+            width: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-text {
+            flex: 1;
+            text-align: center;
+            margin-right: 55px;
+        }
+
+        /* Google */
+        .google-icon {
+            font-size: 21px;
+            font-weight: bold;
+            color: #4285f4;
+        }
+
+        /* Apple */
+        .apple-icon {
+            font-size: 24px;
+            color: #000;
+        }
+
+        /* Email */
+        .email-icon {
+            font-size: 22px;
+        }
+
+        /* OR */
+        .or {
+            text-align: center;
+            margin: 0 0 35px;
+
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Mobile login */
+        .mobile-section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .country {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: 15px;
+            color: #333;
+
+            padding-bottom: 10px;
+
+            border-bottom: 1px solid transparent;
+        }
+
+        .flag {
+            font-size: 22px;
+        }
+
+        .arrow {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .mobile-input {
+            flex: 1;
+
+            border: none;
+            outline: none;
+
+            border-bottom: 1px solid #ccc;
+
+            padding: 10px 5px;
+
+            font-size: 16px;
+            color: #555;
+
+            margin-left: 15px;
+        }
+
+        .mobile-input::placeholder {
+            color: #777;
+        }
+
+        /* Terms */
+        .terms {
+            position: absolute;
+            bottom: 28px;
+            left: 40px;
+            right: 40px;
+
+            text-align: center;
+
+            font-size: 13px;
+            line-height: 20px;
+
+            color: #999;
+        }
+
+        .terms a {
+            color: #777;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 550px) {
+            .login-modal {
+                width: 90%;
+                padding: 22px 30px 25px;
+            }
+
+            .button-text {
+                margin-right: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background content -->
+    <div class="background">
+        <h1>Movie Tickets</h1>
+        <p>Movies, Events, Plays and Sports</p>
+    </div>
+
+
+    <!-- Overlay -->
+    <div class="overlay">
+
+        <!-- Login Modal -->
+        <div class="login-modal">
+
+            <!-- Close -->
+            <button class="close-btn">&times;</button>
+
+            <!-- Title -->
+            <div class="modal-header">
+                <h2>Get Started</h2>
+            </div>
+
+
+            <!-- Google -->
+            <button class="login-btn">
+                <div class="icon">
+                    <span class="google-icon">G</span>
+                </div>
+
+                <div class="button-text">
+                    Continue with Google
+                </div>
+            </button>
+
+
+            <!-- Email -->
+            <button class="login-btn">
+                <div class="icon">
+                    <span class="email-icon">✉</span>
+                </div>
+
+                <div class="button-text">
+                    Continue with Email
+                </div>
+            </button>
+
+
+            <!-- Apple -->
+            <button class="login-btn">
+                <div class="icon">
+                    <span class="apple-icon">●</span>
+                </div>
+
+                <div class="button-text">
+                    Continue with Apple
+                </div>
+            </button>
+
+
+            <!-- OR -->
+            <div class="or">
+                OR
+            </div>
+
+
+            <!-- Mobile Number -->
+            <div class="mobile-section">
+
+                <div class="country">
+                    <span class="flag">🇮🇳</span>
+                    <span>+91</span>
+                    <span class="arrow">▼</span>
+                </div>
+
+                <input
+                    type="tel"
+                    class="mobile-input"
+                    placeholder="Continue with mobile number"
+                >
+
+            </div>
+
+
+            <!-- Terms -->
+            <div class="terms">
+                By continuing, you agree to our
+                <br>
+
+                <a href="#">Terms & Conditions</a>
+                and
+                <a href="#">Privacy Policy</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const closeButton = document.querySelector(".close-btn");
+        const overlay = document.querySelector(".overlay");
+
+        closeButton.addEventListener("click", function () {
+            overlay.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
